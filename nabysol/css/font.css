@@ -1,0 +1,23 @@
+
+@font-face {
+    font-family: "Noto Serif KR";
+    font-weight: 500;
+    font-style: normal;
+    src: url('../font/NotoSerifkr-Medium.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: "GB";
+    src: url('../font/Golden_book_bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SUIT";
+    src: url('../font/SUIT-Variable.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
