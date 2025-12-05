@@ -1,0 +1,27 @@
+/*상세페이지 prj 01 css 입니다*/
+
+:root {
+
+    --back-c: #fff;
+    --point : #396ACC;
+}
+
+html {
+    background-color: var(--back-c);
+}   
+header {
+    font-size: 20px;
+    z-index: 100;
+    mix-blend-mode: normal;
+    color: #111;
+    background-color: var(--back-c);
+    border-bottom: 1px solid #EDEDED;
+}
+header .home ,
+.gnb ul li a.curr{
+    color: var(--point) ;
+}
+
+.gnb ul li a.curr {
+    font-weight: 400;
+}
