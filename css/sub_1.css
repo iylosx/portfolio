@@ -22,6 +22,110 @@ header .home ,
     color: var(--point) ;
 }
 
+header .home a span{
+    position: relative;
+    padding: 30px;
+}
+header .home a span::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    width: 14px;
+    height: 16px;   
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 16' fill='%23396ACC' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 14.9866H4.69225V9.02328H9.30775V14.9866H13V5.86604L7 1.26674L1 5.86604V14.9866ZM0 16V5.35934L7 0L14 5.35934V16H8.30775V10.0367H5.69225V16H0Z' /%3E%3C/svg%3E%0A");
+}
+
+ 
 .gnb ul li a.curr {
     font-weight: 400;
+}
+
+footer::after {
+    background-color: var(--back-c);
+}
+
+
+/*sub__본격 내용*/
+.intro {
+    padding: 95px 0 0 0;
+}
+
+.intro .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.intro .txt strong {
+    color: var(--point);
+    font-weight: 600;
+    font-size: 21px;
+}
+
+.intro .txt h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 15px 0 44px 0;
+}
+.intro .txt p {
+    width: 90%;
+}
+.intro .txt .more a {
+    display: inline-block;
+    color: var(--back-c);
+    background-color: var(--point);
+    padding: 4px 28px ;
+    border-radius: 30px;
+    margin-top: 56px;
+}
+.intro .project {
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    font-size: 15px;
+}
+.intro .project .list ul {
+    display: flex;
+    gap: 0 40px;
+}
+.intro .project .list ul li h3 {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.overview {
+    background-color: #EBF0FA;
+    text-align: center;
+    padding: 147px 0 131px 0;
+    margin: 157px 0 0 0;
+}
+.overview .tit {
+    position: relative;
+}
+.overview .tit h2 {
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+.overview .tit  .deco {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    background: url(../images/content/prj_01_overview.png) no-repeat center left / contain;
+    width: 135px;
+    height: 46px;
+    z-index: 1;
+}
+.overview .photo {
+    margin: 108px;
 }
