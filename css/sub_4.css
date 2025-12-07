@@ -1,0 +1,123 @@
+/*상세페이지 prj 01 css 입니다*/
+
+:root {
+
+    --back-c: #1c1c1c;
+    --point : #A3DF87;
+    --dark : #1c1c1c;
+    
+}
+
+html , body{
+    background-color: var(--back-c);
+    color: #fff;
+}   
+header,
+header .home {
+    font-size: 20px;
+    z-index: 100;
+    mix-blend-mode: normal;
+    background-color: var(--back-c);
+    
+    color: #fff;
+}
+header {
+    border-bottom: 1px solid rgba(32, 28, 26, 0.17);
+}
+
+.gnb ul li a.curr{
+    color: var(--point) ;
+}
+
+header .home a span{
+    position: relative;
+    padding: 30px;
+}
+header .home a span::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    width: 14px;
+    height: 16px;   
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 14.9866H4.69225V9.02328H9.30775V14.9866H13V5.86604L7 1.26674L1 5.86604V14.9866ZM0 16V5.35934L7 0L14 5.35934V16H8.30775V10.0367H5.69225V16H0Z' /%3E%3C/svg%3E%0A");
+}
+
+ 
+.gnb ul li a.curr {
+    font-weight: 400;
+}
+
+
+
+
+.intro  {
+    background: url(../images/content/exh_bg.jpg) no-repeat center center / cover;
+    width: 100%;
+    height: 100dvh;
+    padding: 180px 0 0 0;
+}
+
+.intro .txt strong {
+    font-size: 120px;
+    color: var(--point);
+    font-weight: 900;
+    font-family: "Noto Serif KR";
+}
+.intro .txt h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 17px 0 24px 0;
+}
+.intro .txt p {
+    width: 50%;
+}
+.intro .project .list ul li h3{
+    
+    font-weight: 500;
+    margin: 33px 0 5px 0 ;
+    font-size: 15px;
+}
+.intro .project .list ul li p {
+    margin: 0 0 15px 0;
+    font-size: 15px;
+}
+
+.overview {
+    text-align: center;
+    padding: 118px 0 0 0;
+}
+.overview .tit h2{
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.overview .tit strong {
+    margin: 33px 0 35px 0;
+    font-size: 28px;
+    font-weight: 600;
+    display: inline-block;
+}
+.overview .photo {
+    margin-top: 93px;
+}
+.detail {
+    text-align: center;
+    padding: 200px 0 200px 0;
+}
+.detail .exh_wrap {
+    display: flex;
+    justify-content: center;
+    gap: 0 24px;
+    margin: 230px 0 0 0;
+}
+.detail p {
+    text-align: right;
+    margin: 10px 0 0 0;
+    font-size: 15px;
+}

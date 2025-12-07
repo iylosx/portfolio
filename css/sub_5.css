@@ -1,0 +1,61 @@
+/*상세페이지 prj 01 css 입니다*/
+
+:root {
+
+    --back-c: #1c1c1c;
+    --point : #6a6a6a;
+    --dark : #1c1c1c;
+    
+}
+
+html , body{
+    background-color: var(--back-c);
+    color: #fff;
+}   
+header,
+header .home {
+    font-size: 20px;
+    z-index: 100;
+    mix-blend-mode: normal;
+    background-color: var(--back-c);
+    
+    color: #fff;
+}
+header {
+    border-bottom: 1px solid rgba(32, 28, 26, 0.17);
+}
+
+.gnb ul li a.curr{
+    color: var(--point) ;
+}
+
+header .home a span{
+    position: relative;
+    padding: 30px;
+}
+header .home a span::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    width: 14px;
+    height: 16px;   
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 14.9866H4.69225V9.02328H9.30775V14.9866H13V5.86604L7 1.26674L1 5.86604V14.9866ZM0 16V5.35934L7 0L14 5.35934V16H8.30775V10.0367H5.69225V16H0Z' /%3E%3C/svg%3E%0A");
+}
+
+ 
+.gnb ul li a.curr {
+    font-weight: 400;
+}
+
+
+
+.container img {
+    width: 100%;
+    height: auto;
+    padding: 0 0 150px 0;
+}

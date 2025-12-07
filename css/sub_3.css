@@ -157,11 +157,25 @@ header .home a span::before {
     display: flex;
     justify-content: space-between;
 }
-.guide .ctn h3 {
+.guide h3 {
     margin: 80px 0 80px 0;
     font-size: 21px;
     font-weight: 700;
 }
 .guide .ctn .logo .logo01 {
     padding-top: 30px;
+}
+.guide .banner {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 170px ;
+    gap: 0 110px;
+}
+.guide .banner h3 {
+    margin-top: 0;
+}
+.guide .banner img {
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.03);
+    width: 426px;
+    height: 453px;
 }
