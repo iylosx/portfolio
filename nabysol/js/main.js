@@ -191,51 +191,56 @@ $(document).ready(function () {
     $('.box .review a , .box .treatment a').hover(function () {
         $('.cursor_box').toggleClass('on');
     });
+$('.layerpopup').each(function () {
+    let popName = $(this).data('name');
 
-    var handleCookie = {
-        setCookie: function (name, val, exp) {
-            var date = new Date();
-            date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
-            document.cookie = name + "=" + val + ";expires=" + date.toUTCString() + ";path=/";
-        },
-        getCookie: function (name) {
-            var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-            return value ? value[2] : null;
-        }
-    };
+    // 모바일은 recent만
+    if (device_status == 'mo') {
+        $('.layerpopup').each(function () {
+            if ($(this).hasClass('recent')) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
 
-    $('.layerpopup').each(function () {
-        let popName = $(this).data('name');
+    // 쿠키 확인
+    if (handleCookie.getCookie(popName) === 'y') {
+        $(this).hide();
+    } else {
+        $(this).show();
+    }
+});
 
-        if (device_status == 'mo') {
-            $('.layerpopup').each(function () {
-                if ($(this).hasClass('recent')) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
-            });
-        }
+// 팝업 상태를 모두 설정한 다음
+// 여기서 배경 처리
+if ($('.layerpopup:visible').length === 0) {
+    $('.popup_bg').hide();
+} else {
+    $('.popup_bg').show();
+}
 
-        if (handleCookie.getCookie(popName) === 'y') {
-            $(this).hide();
-        } else {
-            $(this).show();
-        }
-    });
-
-    $('.layerpopup .close').on('click', function () {
-        let target = $(this).data('name');
-        $('.layerpopup[data-name="' + target + '"]').hide();
+// 버튼 이벤트
+$('.layerpopup .close').on('click', function () {
+    let target = $(this).data('name');
+    $('.layerpopup[data-name="' + target + '"]').hide();
+    
+    if ($('.layerpopup:visible').length === 0) {
         $('.popup_bg').hide();
-    });
+    }
+});
 
-    $('.layerpopup .today').on('click', function () {
-        let target = $(this).data('name');
-        handleCookie.setCookie(target, 'y', 1);
-        $('.layerpopup[data-name="' + target + '"]').hide();
+$('.layerpopup .today').on('click', function () {
+    let target = $(this).data('name');
+    handleCookie.setCookie(target, 'y', 1);
+    $('.layerpopup[data-name="' + target + '"]').hide();
+    
+    if ($('.layerpopup:visible').length === 0) {
         $('.popup_bg').hide();
-    });
+    }
+});
+
 
     scroll_chk();  // 문서 로딩 후 1번
     $(window).scroll(function () {
