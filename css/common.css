@@ -94,6 +94,7 @@ body {
 #wrap {
     position: relative;
     overflow: hidden ;
+    min-width: 1400px;
 }
 .blind {
     position: absolute;
