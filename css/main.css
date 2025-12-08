@@ -10,6 +10,7 @@ body{
 .main {
     height: 100dvh;
     margin-bottom: 350px;
+    position: relative;
 }
 
 .main .slogan{
