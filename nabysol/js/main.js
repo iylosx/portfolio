@@ -273,11 +273,11 @@ $(document).on('click', '.layerpopup .today', function () {
     }
 });
 
-// (선택) 화면 크기 변할 때 다시 계산해주고 싶으면
-// 이미 device_status 를 resize에서 바꾸고 있다면 같이 써도 됨
-$(window).on('resize', function () {
-    initLayerPopup();
-});
+// // (선택) 화면 크기 변할 때 다시 계산해주고 싶으면
+// // 이미 device_status 를 resize에서 바꾸고 있다면 같이 써도 됨
+// $(window).on('resize', function () {
+//     initLayerPopup();
+// });
 
 
 
