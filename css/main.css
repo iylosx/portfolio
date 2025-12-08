@@ -323,6 +323,25 @@ body{
     text-align: right;
 }
 
+@media screen and (min-width:2200px){ 
+    .main .slogan h2 {
+    font-size: clamp(60%, 6vw, 15rem);
+    line-height: 1.3;
+    font-weight: 400;
+    position: relative;
+    width: 91%;
+}
+   .main .slogan h2::before {
+        position: absolute;
+        content: "";
+        top: 52%;
+        transform: translateY(-50%);
+        left: 562px;
+        width: 18%;
+        height: 5px;
+        background-color: var(--txt-c);
+   }
+}
 
 
 @media screen and (max-width:1600px){ 
