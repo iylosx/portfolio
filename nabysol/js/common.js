@@ -22,7 +22,7 @@ $(document).ready(function(){
     })
     
 
-    $('header .gnb .gnb_wrap .gnb_list ul li').on('mouseenter', function(){
+    $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').on('mouseenter', function(){
         if(device_status =='pc'){
             $('header').addClass('menu_pc')
             $(this).addClass('over')
@@ -60,13 +60,28 @@ $(document).ready(function(){
         }
     });
 
-    $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').on('mouseleave', function(){
-        if(device_status =='pc'){
-            $(this).removeClass('over');
-            $('header').removeClass('menu_pc');
-            $('header').removeClass('bg_on');
+    $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').on('mouseleave', function(e){
+    if(device_status =='pc'){
+
+        // 마우스가 어디로 이동하는지 확인
+        let to = e.relatedTarget;
+
+        // 만약 이동한 곳이 현재 li(혹은 그 안의 자식)이라면 닫지 말기
+        if ($(to).closest(this).length > 0) {
+            return; 
         }
-    });
+
+        $(this).removeClass('over')
+        
+        // 만약 다른 li는 여전히 over면 header는 유지
+        if ($('header .gnb .gnb_wrap .gnb_list ul.depth1 > li.over').length === 0) {
+            $('header').removeClass('menu_pc')
+            $('header').removeClass('bg_on')
+        }
+    }
+});
+
+     
     $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li:last-child > ul.depth2 > li:last-child').on('focusout', function(){
         if(device_status =='pc'){
             $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').removeClass('over');
@@ -75,6 +90,7 @@ $(document).ready(function(){
         }
     });
 
+   
 
 
     $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li > a').on('click', function(e){

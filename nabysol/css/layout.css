@@ -123,9 +123,8 @@ header .gnb .gnb_wrap .gnb_list ul.depth1 > li > ul.depth2 {
     position: absolute;
     top: 100%;
     left: 0;
-    opacity: 0;
+    opacity: 0;    
     visibility: hidden;
-    pointer-events: none; /* 안 보일 때 hover 불가 */
     transition: opacity .35s ease;
     color: var(--light);
     line-height: var(--header-h);
