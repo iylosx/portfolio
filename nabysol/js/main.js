@@ -193,91 +193,49 @@ $(document).ready(function () {
     });
 
 
-    // =========================
-// 팝업 초기 설정 함수
-// =========================
-function initLayerPopup() {
+   var handleCookie = {
+        setCookie: function (name, val, exp) {
+            var date = new Date();
+            date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + val + ";expires=" + date.toUTCString() + ";path=/";
+        },
+        getCookie: function (name) {
+            var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+            return value ? value[2] : null;
+        }
+    };
+
     $('.layerpopup').each(function () {
-        let $popup  = $(this);
-        let popName = $popup.data('name');
+        let popName = $(this).data('name');
 
-        // 1) 모바일이면 recent 아닌 팝업은 아예 안 씀
-        if (device_status === 'mo' && !$popup.hasClass('recent')) {
-            $popup.hide();
-            return; // 이 팝업에 대해서는 여기서 끝
+        if (device_status == 'mo') {
+            $('.layerpopup').each(function () {
+                if ($(this).hasClass('recent')) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
         }
 
-        // 2) 쿠키 확인 (handleCookie가 없으면 그냥 통과)
-        let isHiddenByCookie = false;
-        if (typeof handleCookie !== 'undefined' && handleCookie.getCookie) {
-            if (handleCookie.getCookie(popName) === 'y') {
-                isHiddenByCookie = true;
-            }
-        }
-
-        if (isHiddenByCookie) {
-            $popup.hide();
+        if (handleCookie.getCookie(popName) === 'y') {
+            $(this).hide();
         } else {
-            $popup.show();
+            $(this).show();
         }
     });
 
-    // 3) 모바일에서만 배경 처리
-    if (device_status === 'mo') {
-        if ($('.layerpopup:visible').length === 0) {
-            $('.popup_bg').hide();
-        } else {
-            $('.popup_bg').show();
-        }
-    }
-}
+    $('.layerpopup .close').on('click', function () {
+        let target = $(this).data('name');
+        $('.layerpopup[data-name="' + target + '"]').hide();
+    });
 
-// 최초 1번 실행
-initLayerPopup();
-
-
-// =========================
-// 버튼 이벤트 (위임 방식)
-// =========================
-
-// 닫기 버튼
-$(document).on('click', '.layerpopup .close', function () {
-    let target = $(this).data('name');
-
-    $('.layerpopup[data-name="' + target + '"]').hide();
-
-    // 모바일일 때만 bg 처리
-    if (device_status === 'mo') {
-        if ($('.layerpopup:visible').length === 0) {
-            $('.popup_bg').hide();
-        }
-    }
-});
-
-// 오늘 하루 보지 않기
-$(document).on('click', '.layerpopup .today', function () {
-    let target = $(this).data('name');
-
-    // 쿠키 셋팅 (handleCookie 없으면 그냥 스킵)
-    if (typeof handleCookie !== 'undefined' && handleCookie.setCookie) {
+    $('.layerpopup .today').on('click', function () {
+        let target = $(this).data('name');
         handleCookie.setCookie(target, 'y', 1);
-    }
+        $('.layerpopup[data-name="' + target + '"]').hide();
+    });
 
-    $('.layerpopup[data-name="' + target + '"]').hide();
-
-    // 모바일일 때만 bg 처리
-    if (device_status === 'mo') {
-        if ($('.layerpopup:visible').length === 0) {
-            $('.popup_bg').hide();
-        }
-    }
-});
-
-// // (선택) 화면 크기 변할 때 다시 계산해주고 싶으면
-// // 이미 device_status 를 resize에서 바꾸고 있다면 같이 써도 됨
-// $(window).on('resize', function () {
-//     initLayerPopup();
-// });
 
 
 
