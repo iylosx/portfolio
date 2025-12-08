@@ -1411,7 +1411,8 @@
 
 }
 .popup_bg {
-    display: none;
+    display: block;
+    opacity: 0;
 }
 
 @media screen and (max-width:1024px){
