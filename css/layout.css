@@ -61,8 +61,8 @@ footer::after {
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
-    width: 100%;
+    top: -1px;
+    width: 100vw;
     height: 71px;
     background-color: var(--main1-c);
     border-radius: 0 0 30px 30px;
