@@ -23,7 +23,7 @@ $(function () {
     const wh = $(window).height();
 
     // 화면 안쪽 35% 지점(헤더 바로 아래보다 안쪽)
-    const checkpoint = st + hh + wh * 0.35;
+    const checkpoint = st + hh + wh * 0.14;
 
     // checkpoint가 포함된 섹션 찾기
     let current = null;
