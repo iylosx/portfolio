@@ -1,0 +1,8 @@
+@import url("https://font.elice.io/css?family=Elice+DX+Neolli");
+
+@font-face {
+    font-family: 'wanted';
+    src: url('../font/WantedSansVariable.woff2') format('woff2');
+    font-display: swap;
+}
+
