@@ -101,7 +101,6 @@ header .header_main .gnb{
 header .header_main .gnb_wrap ul.depth1 {
     display: flex;
     align-items: center;
-    
 }
 header .header_main .gnb_wrap ul.depth1 > li > a {
     display: block;
@@ -110,16 +109,21 @@ header .header_main .gnb_wrap ul.depth1 > li > a {
     font-family: 'Elice DX Neolli';
     color: var(--tit-c);
     font-weight: 500;
+    line-height: var(--header-var);
 }
 header .header_main .gnb_wrap ul.depth1 > li > .depth2_wrap {
     position: absolute;
     left: 0;
-    top: 100%;
+    top: 99%;
     width: 100%;
     background-color: var(--white);
     overflow: hidden;
     display: flex;
-    transition: height 0.5s;
+    transition: opacity 0.3s;
+    height: 0;
+    opacity: 0;
+    
+    
 }
 
 header .header_main .gnb_wrap ul.depth1 > li > .depth2_wrap > .slogan {
@@ -192,7 +196,7 @@ header .header_main .gnb_wrap ul.depth1 > li > .depth2_wrap > ul.depth2  > li > 
     transform: translateY(-50%);
     white-space: nowrap;
     flex-wrap: wrap;
-    width: 55vw;
+    width: 59vw;
     height: 100%;
     padding: 10px 40px;
     font-size: 15px;
@@ -224,6 +228,7 @@ header .header_main .gnb_wrap .gnb_lang {
 }
 
 /*메뉴 열림 -- PC*/
+
 header.open_pc::after {
     display: block;
 }
@@ -243,8 +248,9 @@ header.open_pc .header_main .gnb_wrap ul.depth1 > li.over > a::after {
     transform: translateY(-50%);
 
 }
-header .header_main .gnb_wrap ul.depth1 > li.over > .depth2_wrap {
+header.open_pc .header_main .gnb_wrap ul.depth1 > li.over > .depth2_wrap {
     height: auto;
+    opacity: 1;
 }
 }
 
@@ -252,5 +258,4 @@ header .header_main .gnb_wrap ul.depth1 > li.over > .depth2_wrap {
 
 footer {
     height: 1500px ;
-    background-color: cadetblue;
 }
