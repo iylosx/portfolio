@@ -9,13 +9,15 @@
 
     <script src="js/main.js"></script>
     <script src="js/common.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <title>군산시청</title>
 </head>
 <body>
     <div id="wrap">
-        <!--PC에서 메뉴가 열리면 open_pc-->
-        <header class="">
+        <!--PC에서 메뉴가 열리면 open_pc
+            모바일에서 메뉴가 열리면 open_mo-->
+        <header class="open_mo">
             <div class="header_top">
                 <ul>
                     <li>
@@ -31,7 +33,7 @@
             <div class="header_main">
                 <h1 class="logo"><span class="blind">군산시청</span></h1>
                 <nav class="gnb">
-                    <button class="gnb_open"><span>메뉴열기</span></button>
+                    <button class="gnb_open"><span class="blind">메뉴열기</span></button>
                     <div class="gnb_wrap">
                         <div class="gnb_lang"><button><span>Language</span></button></div>
                         <ul class="depth1">
@@ -706,7 +708,27 @@
                 </nav><!--gnb-->
             </div>
         </header>
-        <div class="container"></div>
+        <div class="container">
+            <section class="main_util">
+                <div class="wrapper">
+                    <div class="weather">
+                        <div class="status">
+                            <strong>오늘 군산은</strong>
+                        </div>
+                        <div class="w_list">
+                            <h2>맑음</h2>
+                            <dl>
+                                <dt>기온</dt>
+                                <dd>1℃</dd>
+                                <dt>풍랑</dt>
+                                <dd class="wind_stat">안정</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="search"></div>
+            </section>
+        </div>
         <footer></footer>
     </div><!--wrap-->
 </body>

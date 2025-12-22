@@ -2,3 +2,61 @@
 @import url(default.css);
 @import url(font.css);
 @import url(layout.css);
+
+.main_util {
+    margin: 60px 0 0 0;
+}
+.main_util .weather {
+    padding-left: 62px;
+    position: relative;
+}
+.main_util .weather::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 40 40' fill='%2311111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.923 6.769V0H20.923V6.769H18.923ZM29.9155 11.346L28.55 9.9805L33.2655 5.077L34.719 6.542L29.9155 11.346ZM33.077 20.923V18.923H39.846V20.923H33.077ZM18.923 39.846V33.1155H20.923V39.846H18.923ZM10.0075 11.2845L5.077 6.5805L6.5805 5.1655L11.3845 9.9305L10.0075 11.2845ZM33.254 34.769L28.55 29.8655L29.904 28.55L34.6805 33.242L33.254 34.769ZM0 20.923V18.923H6.769V20.923H0ZM6.542 34.769L5.1655 33.2655L9.8805 28.55L10.6 29.246L11.3575 29.954L6.542 34.769ZM19.932 29.923C17.1567 29.923 14.7947 28.9517 12.846 27.009C10.8973 25.0663 9.923 22.7073 9.923 19.932C9.923 17.1567 10.8943 14.7947 12.837 12.846C14.7797 10.8973 17.1387 9.923 19.914 9.923C22.6893 9.923 25.0513 10.8943 27 12.837C28.9487 14.7797 29.923 17.1387 29.923 19.914C29.923 22.6893 28.9517 25.0513 27.009 27C25.0663 28.9487 22.7073 29.923 19.932 29.923ZM19.923 27.923C22.123 27.923 24.0063 27.1397 25.573 25.573C27.1397 24.0063 27.923 22.123 27.923 19.923C27.923 17.723 27.1397 15.8397 25.573 14.273C24.0063 12.7063 22.123 11.923 19.923 11.923C17.723 11.923 15.8397 12.7063 14.273 14.273C12.7063 15.8397 11.923 17.723 11.923 19.923C11.923 22.123 12.7063 24.0063 14.273 25.573C15.8397 27.1397 17.723 27.923 19.923 27.923Z' /%3E%3C/svg%3E%0A");
+}
+.main_util .weather strong{
+    color: var(--main1-c);
+    font-size: 13px;
+}
+.main_util .weather .w_list {
+    display: flex;
+    align-items: flex-end;
+    gap: 0 12px;
+}
+
+.main_util .weather .w_list h2 {
+    font-family: var(--nuli);
+    margin: 3px 0 0 0;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--tit-c);
+}
+.main_util .weather .w_list dl {
+    display: flex;
+    gap: 0 14px;
+}
+.main_util .weather .w_list dl dt {
+    position: relative;
+}
+.main_util .weather .w_list dl dt::before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 10px;
+    background-color: #ededed;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main_util .weather .w_list dl dd.wind_stat {
+    color: var(--main1-c);
+}
