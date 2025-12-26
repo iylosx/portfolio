@@ -6,6 +6,9 @@
 .main_util {
     margin: 60px 0 0 0;
 }
+.main_util .wrapper {
+    display: flex;
+}
 .main_util .weather {
     padding-left: 62px;
     position: relative;
@@ -59,4 +62,36 @@
 }
 .main_util .weather .w_list dl dd.wind_stat {
     color: var(--main1-c);
+}
+
+.main_util .search .sch_wrap {
+    border: 2px solid var(--main-c);
+    border-radius: 50px;
+    height: 69px;
+    padding: 0 24px 0 55px;
+    display: flex; /*검색어입력 - 버튼 좌우배치*/
+    justify-content: space-between;
+    align-items: center;
+}
+.main_util .search .sch_wrap label {
+    display: none;
+}
+.main_util .search .sch_wrap input[type="text"] {
+    height: 45px;
+    width: calc(100% - 70px);
+    font-size: 20px;
+    color: var(--tit-c);
+    border: none;
+    outline: none;
+}
+.main_util .search .sch_wrap input[type="submit"] {
+    width: 45px;
+    height: 45px;
+    border: none;
+    color: transparent;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 19px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 19' fill='%230074D8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.7733 18.3647L10.4315 12.0227C9.9355 12.4069 9.3635 12.7117 8.7155 12.937C8.0675 13.1623 7.37483 13.275 6.6375 13.275C4.78483 13.275 3.21542 12.6319 1.92925 11.3457C0.643083 10.0594 0 8.49 0 6.6375C0 4.785 0.643083 3.21558 1.92925 1.92925C3.21542 0.643083 4.78483 0 6.6375 0C8.49 0 10.0593 0.643083 11.3455 1.92925C12.6318 3.21558 13.275 4.785 13.275 6.6375C13.275 7.37883 13.1623 8.0715 12.937 8.7155C12.7115 9.3595 12.4067 9.9275 12.0227 10.4195L18.3705 16.7733L16.7733 18.3647ZM6.6375 11C7.8515 11 8.88208 10.5764 9.72925 9.72925C10.5764 8.88225 11 7.85167 11 6.6375C11 5.42333 10.5764 4.39275 9.72925 3.54575C8.88208 2.69858 7.8515 2.275 6.6375 2.275C5.42333 2.275 4.39267 2.69858 3.5455 3.54575C2.6985 4.39275 2.275 5.42333 2.275 6.6375C2.275 7.85167 2.6985 8.88225 3.5455 9.72925C4.39267 10.5764 5.42333 11 6.6375 11Z' /%3E%3C/svg%3E%0A");
 }
