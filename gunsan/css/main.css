@@ -100,6 +100,7 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 19' fill='%230074D8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.7733 18.3647L10.4315 12.0227C9.9355 12.4069 9.3635 12.7117 8.7155 12.937C8.0675 13.1623 7.37483 13.275 6.6375 13.275C4.78483 13.275 3.21542 12.6319 1.92925 11.3457C0.643083 10.0594 0 8.49 0 6.6375C0 4.785 0.643083 3.21558 1.92925 1.92925C3.21542 0.643083 4.78483 0 6.6375 0C8.49 0 10.0593 0.643083 11.3455 1.92925C12.6318 3.21558 13.275 4.785 13.275 6.6375C13.275 7.37883 13.1623 8.0715 12.937 8.7155C12.7115 9.3595 12.4067 9.9275 12.0227 10.4195L18.3705 16.7733L16.7733 18.3647ZM6.6375 11C7.8515 11 8.88208 10.5764 9.72925 9.72925C10.5764 8.88225 11 7.85167 11 6.6375C11 5.42333 10.5764 4.39275 9.72925 3.54575C8.88208 2.69858 7.8515 2.275 6.6375 2.275C5.42333 2.275 4.39267 2.69858 3.5455 3.54575C2.6985 4.39275 2.275 5.42333 2.275 6.6375C2.275 7.85167 2.6985 8.88225 3.5455 9.72925C4.39267 10.5764 5.42333 11 6.6375 11Z' /%3E%3C/svg%3E%0A");
 }
 
+
 @media screen and (max-width:1024px){
         .main_util {
         margin: 18px 0 0 0;
@@ -115,4 +116,101 @@
     .main_util .search .sch_wrap {
         padding: 15px 13px 15px 29px;
     }
+}
+.main_content {
+    margin: 53px 0 0 0;
+}
+.main_content .popup{
+    width: 32.22%;
+    height: 538px;
+    border-radius: 20px 20px  20px 80px;
+    overflow: hidden;
+    position: relative;
+}
+.main_content .popup .swiper .swiper-slide a {
+    display: block;
+}
+.main_content .popup .swiper .swiper-slide a .photo {
+    width: 464px;
+    height: 538px;
+}
+.main_content .popup .swiper .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+    /* display: none; */
+}
+.main_content .popup .swiper .ctrl_btn {
+    width: 177px;
+    height: 49px;
+    background-color: var(--white);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    border-radius: 20px 0 0 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 20px;
+}
+.main_content .popup .swiper .ctrl_btn::after,
+.main_content .popup .swiper .ctrl_btn::before {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/main/popup_clip.svg);
+    content: "";
+    right: 0;
+    top: -36%;
+}
+.main_content .popup .swiper .ctrl_btn::before {
+    left: -10%;
+    bottom: 0;
+    top: auto;
+    right: auto;
+}
+
+.main_content .popup .swiper .ctrl_btn .prev,
+.main_content .popup .swiper .ctrl_btn .next {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 7px;
+    height: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 14' fill='%23111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.51754 13.0351L0 6.51754L6.51754 0L7.47572 0.958179L1.91619 6.51754L7.47572 12.0769L6.51754 13.0351Z' /%3E%3C/svg%3E%0A");    
+}
+.main_content .popup .swiper .ctrl_btn .next {
+    transform: rotate(180deg);
+}
+.main_content .popup .swiper .ctrl_btn .stop,
+.main_content .popup .swiper .ctrl_btn .play {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 9px;
+    height: 11px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 11' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.80859 10.165V0H8.71289V10.165H5.80859ZM0 10.165V0H2.9043V10.165H0Z' /%3E%3C/svg%3E%0A");
+}
+.main_content .popup .swiper .ctrl_btn .play {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 12' fill='%23111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.000648492 0.000324163L9.16602 5.83366L-0.000649512 11.667L-0.000648492 0.000324163Z' /%3E%3C/svg%3E%0A");
+    display: none;
+}
+.main_content .popup .swiper .ctrl_btn .paging {
+    width: 53px;
+    display: flex;
+    justify-content: center;
+}
+
+.main_content .popup .swiper .ctrl_btn .swiper-pagination-current,
+.main_content .popup .swiper .ctrl_btn .swiper-pagination-total {
+    padding: 0 7px;
+}
+.main_content .popup .swiper .ctrl_btn .swiper-pagination-current {
+    color: var(--main1-c);
+    font-weight: 700;
 }
