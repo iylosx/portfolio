@@ -71,6 +71,8 @@ function initFacilitySwiper() {
 
     speed: 1000,
 
+    roundLengths: true,
+
     // 레이아웃 변화 추적(특히 display/toggle/폰트 로딩/AOS 등에 도움)
     observer: true,
     observeParents: true,
