@@ -21,10 +21,10 @@ $(document).ready(function(){
     
     const main_ctn_swiper = new Swiper('.main_content .popup .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
-	autoplay: {  /* 팝업 자동 실행 */
-		delay: 2500,
-		disableOnInteraction: true,
-	},
+	// autoplay: {  /* 팝업 자동 실행 */
+	// 	delay: 2500,
+	// 	disableOnInteraction: true,
+	// },
 
 	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 

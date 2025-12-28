@@ -42,7 +42,8 @@
 
     /*margin*/
     --ctn-mar: 30px;
-    --wrapper-mar: 210px;
+    --wrapper-mar: calc((100vw - var(--wrapper-width)) / 2);
+    --wrapper-width: 1440px;
 }
 @media screen and (max-width:1024px){
     :root {
@@ -67,6 +68,9 @@
         --ctn-mar: 16px;
         --wrapper-mar: 16px;
     }
+    .pc_only {
+    display: none;
+}
 }
 
 html {
