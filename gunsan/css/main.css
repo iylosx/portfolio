@@ -129,7 +129,6 @@
 }
 .main_content .wrapper .ctn_wrap {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: flex-end;
     width: 57.77%;
     gap: 0 24px;
@@ -140,6 +139,8 @@
     border-radius: 20px 20px  20px 80px;
     overflow: hidden;
     position: relative;
+    aspect-ratio: 0.796 / 1;
+
 }
 .main_content .popup .swiper {
     height: 100%;
@@ -297,7 +298,9 @@
     word-break: normal;
     font-size: 15px;
 }
-
+.main_content .sug .sug_list ul li:last-child {
+    display: none;
+}
 .main_content .mayor {
     position: relative;
     width: 40.625%;
@@ -313,7 +316,7 @@
     background-size: cover;
     opacity: .12;
     content: "";
-    width: calc(100% + var(--wrapper-mar) + 30px);
+    width: calc(100% + var(--wrapper-mar) + 50px);
     height: 100%;
     border-radius: 230px 0 0 0;
     z-index: -10;
@@ -407,16 +410,18 @@
 }
 .main_content .wrapper .ctn_wrap {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+    justify-content: space-between;
     width: 100%;
     gap: 0 24px;
 }
 .main_content .popup {
-    aspect-ratio: 464 / 583;
+    width: 46%;
 }
 .main_content .sug {
-    width: 40%;
+    width: 50%;
+}
+.main_content .sug .sug_list ul li:last-child {
+    display: block;
 }
 .main_content .mayor {
     margin: 40px 0 0 0;
@@ -435,11 +440,31 @@
     margin-top: 50px;
 }
 }
+
+@media screen and (max-width:1170px){
+    .main_content .sug .sug_list ul li:last-child {
+    display: none;
+}
+}
+
 @media screen and (max-width:1024px){
     .container {
         margin: 150px 0 0 0;
     }
+
+.main_content .sug .sug_list ul li.first a p {
+    -webkit-line-clamp: 2;
+    height: 3em;
 }
+
+}
+@media screen and (max-width:1024px){
+    .main_content .sug .sug_list ul li:nth-child(3) {
+    display: none;
+}
+}
+
+
 
 @media screen and (max-width:768px){
     .main_content .wrapper .ctn_wrap {
@@ -462,6 +487,11 @@
     height: 3em;
     overflow: hidden;
 }
+
+.main_content .sug .sug_list ul li:nth-child(3){
+    display: block;
+}
+
 .main_content .mayor {
     padding-top: 100px;
     padding-left: 3%;
@@ -550,5 +580,26 @@
 .news .news_wrap {
     width: calc(100% - var(--wrapper-mar));
     margin-left: var(--wrapper-mar);
-    border: 1px solid red;
+}
+.news .tab_list ul li button {
+    display: inline-block;
+    padding: 12.5px 16px;
+}
+.news .tab_list ul li.active button {
+    padding: 8px 16px 8px 30px;
+    border-radius: 30px;
+    background-color: var(--main1-c);
+    color: var(--white);
+    position: relative;
+}
+.news .tab_list ul li.active button::after {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    content: "";
+    border-radius: 50%;
+    background-color: var(--white);
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
 }
