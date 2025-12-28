@@ -42,33 +42,48 @@ $(document).ready(function () {
         },
     });
 
-    let facility_swiper = new Swiper('.facility .swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 30,
-        breakpoints: {
-            769: {
-                slidesPerView: 'auto',
-                spaceBetween: 50,
-            },
-            1025: {
-                slidesPerView: 'auto',
-                spaceBetween: 170,
-            },
-        },
-        centeredSlides: true,
-        loop: true,
-
-        navigation: {
-            nextEl: '.facility .ctrl_btn .next',
-            prevEl: '.facility .ctrl_btn .prev',
-        },
-        speed: 1000,
-
-    });
     
-    setTimeout(() => {
-        facility_swiper.refresh();
-    }, 200);
+
+    let facility_swiper;
+
+function initFacilitySwiper() {
+  if (!$('.facility .swiper').length) return;
+
+  // 이미 있으면 제거
+  if (facility_swiper && typeof facility_swiper.destroy === 'function') {
+    facility_swiper.destroy(true, true);
+  }
+
+  facility_swiper = new Swiper('.facility .swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    breakpoints: {
+      769: { slidesPerView: 'auto', spaceBetween: 50 },
+      1025: { slidesPerView: 'auto', spaceBetween: 170 },
+    },
+    centeredSlides: true,
+    loop: true,
+    
+    navigation: {
+      nextEl: '.facility .ctrl_btn .next',
+      prevEl: '.facility .ctrl_btn .prev',
+    },
+
+    speed: 1000,
+
+    // 레이아웃 변화 추적(특히 display/toggle/폰트 로딩/AOS 등에 도움)
+    observer: true,
+    observeParents: true,
+  });
+}
+
+// DOM 준비 후 + 로드 후 1번 더
+$(document).ready(initFacilitySwiper);
+$(window).on('load', function () {
+  setTimeout(initFacilitySwiper, 0);
+});
+    
+    
 
     function scroll_chk() {
 
@@ -244,6 +259,8 @@ $(document).ready(function () {
         scroll_chk();  // 스크롤할 때마다
     });
 
+    
+
     AOS.init({
         offset: 150,
         duration: 500,
@@ -268,5 +285,6 @@ window.addEventListener('load', function() {
         AOS.refresh();
     }, 200);
 
+   
     
 });

@@ -458,6 +458,9 @@
     padding-top: clamp(104px, 20vh ,200px);
     position: relative;
 }
+.facility .facility_list .swiper .swiper-wrapper{
+  transition-property: transform !important;
+}
 
 .facility .facility_list .swiper .swiper-slide{
     width: 70vw;
@@ -469,7 +472,7 @@
     background-image: url(../images/main/facility01.jpg);
     position: relative;
     z-index: -2;
-    transition: 1s;
+    transition: transform 1s;
     overflow: hidden;
 }
 .facility .facility_list .swiper .swiper-slide::before{
