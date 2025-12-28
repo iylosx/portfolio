@@ -66,6 +66,9 @@ $(document).ready(function () {
 
     });
     
+    setTimeout(() => {
+        facility_swiper.refresh();
+    }, 200);
 
     function scroll_chk() {
 
@@ -265,7 +268,5 @@ window.addEventListener('load', function() {
         AOS.refresh();
     }, 200);
 
-    setTimeout(() => {
-        facility_swiper.refresh();
-    }, 200);
+    
 });
