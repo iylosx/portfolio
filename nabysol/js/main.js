@@ -63,11 +63,7 @@ $(document).ready(function () {
             prevEl: '.facility .ctrl_btn .prev',
         },
         speed: 1000,
-        on: {
-            init: function () {
-                this.update();
-            },
-        }
+
     });
     
 
@@ -267,5 +263,9 @@ window.addEventListener('load', function() {
     // Swiper/레이아웃 후 렌더링 안정화
     setTimeout(() => {
         AOS.refresh();
+    }, 200);
+
+    setTimeout(() => {
+        facility_swiper.refresh();
     }, 200);
 });
