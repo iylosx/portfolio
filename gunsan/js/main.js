@@ -60,4 +60,46 @@ $(document).ready(function(){
     });
 
 
+    const news1_swiper = new Swiper('.news .tab_ctn .item1 .list .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		768: {    /* 640px 이상일때 적용 */
+			slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		}
+	}
+	
+});
+const news2_swiper = new Swiper('.news .tab_ctn .item2 .list .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		768: {    /* 640px 이상일때 적용 */
+			slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		}
+	}
+	
+});
+
+let tab_name
+        $('.news .tab_list ul li').on('click', function(){
+            $('.news .tab_list ul li').removeClass('active')
+            $(this).addClass('active')
+
+            $('.news .tab_list ul li button span').text('')
+            $(this).find('button span').text('선택됨')
+
+            tab_name = $(this).attr('data-tab')
+            $('.news .tab_ctn .tab_item').removeClass('active')
+            //find로 찾으려면 클래스명이면 .추가 해야해
+            //그런데 내가 가져온 이름은 .이 없어 .. -->>
+            $('.news .tab_ctn').find('.' + tab_name).addClass('active')
+
+            //선택된 tab_item에 title에 선택됨 추가
+            $('.news .tab_ctn .tab_item').attr('title', '')
+             $('.news .tab_ctn').find('.' + tab_name).attr('title', '선택됨')
+        })
+
 })//end js
