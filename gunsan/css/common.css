@@ -37,13 +37,13 @@
     --nuli : 'Elice DX Neolli';
 
     /*display*/
-    --header-h: 90px;
-    --header-var : clamp(56px, 7vw, 90px);
+    --header-h: 105px;
+    --header-var : clamp(56px, 7vw, 105px);
 
     /*margin*/
     --ctn-mar: 30px;
     --wrapper-mar: calc((100vw - var(--wrapper-width)) / 2);
-    --wrapper-width: 1440px;
+    --wrapper-width: 1600px;
 }
 @media screen and (max-width:1024px){
     :root {
@@ -51,10 +51,6 @@
         --basesize: 16px;
         --btnsize: 13px;
         /*display*/
-        --header-h: 70px;
-        /*margin*/
-        --ctn-mar: 16px;
-        --wrapper-mar: 16px;
     }
 }
 @media screen and (max-width:768px){
@@ -63,8 +59,6 @@
         --basesize: 16px;
         --btnsize: 13px;
         /*display*/
-        --header-h: 56px;
-        /*margin*/
         --ctn-mar: 16px;
         --wrapper-mar: 16px;
     }
@@ -90,12 +84,12 @@ body {
     margin: 0 var(--ctn-mar);
 }
 .wrapper {
-    width: 1440px;
+    width: 1600px;
     margin: 0 auto;
 }
 
 
-@media screen and (max-width:1500px){
+@media screen and (max-width:1650px){
     :root {
         --ctn-mar: 5%;
         --wrapper-mar: 5%;
@@ -105,23 +99,24 @@ body {
         margin: 0 var(--ctn-mar);
         
     }
-    
     html {
         font-size:9px;
     }
 }
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1650px){
     :root {
-        --ctn-mar: 4%;
+        --ctn-mar: 3%;
+        --wrapper-mar: 3%;
     }
     .wrapper {
         width: auto;
         margin: 0 var(--ctn-mar);
         
     }
-    
-    
+    html {
+        font-size:9px;
+    }
 }
 
 
