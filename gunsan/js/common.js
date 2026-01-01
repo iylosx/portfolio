@@ -31,12 +31,6 @@ $(document).ready(function(){
         }
 
     })
-    $('header .header_main .gnb_wrap ul.depth1 > li').find('> a').on('focusin', function () {
-        if(device_status == 'pc'){
-            $('header .header_main .gnb_wrap ul.depth1 > li').removeClass('over');     // 이전 모든 over 제거
-            $(this).parent().addClass('over'); // 현재만
-        }
-    });
 
     $('header .header_main .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
         if(device_status == 'pc'){
