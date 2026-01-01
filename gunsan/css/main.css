@@ -113,6 +113,7 @@
 .main_content .mayor {
     width: 49.25%;
     height: 36.11%;
+    position: relative;
 }
 .main_content .mayor .box {
     border-radius: 20px ;
@@ -125,13 +126,38 @@
     aspect-ratio: 788 / 390;
 } 
 
+.main_content .mayor .photo {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
 
 .main_content .mayor .ico_list {
     position: absolute;
-    bottom: 0;
+    bottom: -9.2353em;
     left: 0;
+    width: 100%;
 }
 .main_content .mayor .ico_list ul {
     display: flex;
-    gap: 0 43px;
+    justify-content: space-between;
+    
+}
+.main_content .mayor .ico_list ul li a {
+    display: flex;
+    width: 8.2353em;
+    height: 8.2353em;
+    border-radius: 1.1765em;
+    border: 1px solid var(--main1-cw);
+    box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.05);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px 0;
+    font-size: clamp(13px, 1vw ,15px);
+    transition: transform .3s;
+}
+.main_content .mayor .ico_list ul li a:hover {
+    transform: translateY(-10px);
 }

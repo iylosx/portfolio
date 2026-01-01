@@ -21,7 +21,7 @@ $(document).ready(function(){
     device_chk()
 
 
-    $('header .header_main .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+    $('header .header_main .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
             if($(this).hasClass('over')){
                 $(this).removeClass('over')    
@@ -31,6 +31,13 @@ $(document).ready(function(){
         }
 
     })
+    $('header .header_main .gnb_wrap ul.depth1 > li').find('> a').on('focusin', function () {
+        if(device_status == 'pc'){
+            $('header .header_main .gnb_wrap ul.depth1 > li').removeClass('over');     // 이전 모든 over 제거
+            $(this).parent().addClass('over'); // 현재만
+        }
+    });
+
     $('header .header_main .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
         if(device_status == 'pc'){
             $('header').removeClass('open_pc')

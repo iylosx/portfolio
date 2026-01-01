@@ -9,7 +9,8 @@ header {
     left: 0;
     width: 100%;
     background-color: var(--white);
-    z-index: 999;
+    
+    
 }
 header::after {
     position: absolute;
@@ -21,13 +22,14 @@ header::after {
     background-color: #ededed;
     pointer-events: none;
     display: none;
+    z-index: 200;
 }
 header .header_top{
-    height: 50px;
+    height: 40px;
     font-size: 15px;
     display: flex;
     justify-content: space-between;
-    line-height: 50px;
+    line-height: 40px;
     padding-right: var(--ctn-mar);
     overflow-x: auto;
     overflow-y: hidden;
@@ -144,7 +146,7 @@ header .header_top .top_util .font_size button.small {
 }
 
 header .header_util {
-    padding: 53px 0;
+    padding: 45px 0;
     border-bottom: 1px solid #ededed;
 }
 
@@ -217,6 +219,19 @@ header .header_util .search .sch_wrap {
     width: 100%;
     position: relative;
 }
+header .header_util .search .sch_wrap::after {
+    position: absolute;
+    content: "";
+    right: 75px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 22px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 28 20' fill='%23A9A9A9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.41033 20C1.73678 20 1.16667 19.7667 0.7 19.3C0.233333 18.8333 0 18.2632 0 17.5897V2.41033C0 1.73678 0.233333 1.16667 0.7 0.7C1.16667 0.233333 1.73678 0 2.41033 0H25.5897C26.2632 0 26.8333 0.233333 27.3 0.7C27.7667 1.16667 28 1.73678 28 2.41033V17.5897C28 18.2632 27.7667 18.8333 27.3 19.3C26.8333 19.7667 26.2632 20 25.5897 20H2.41033ZM2.41033 18H25.5897C25.7094 18 25.8078 17.9616 25.8847 17.8847C25.9616 17.8078 26 17.7094 26 17.5897V2.41033C26 2.29056 25.9616 2.19222 25.8847 2.11533C25.8078 2.03845 25.7094 2 25.5897 2H2.41033C2.29056 2 2.19222 2.03845 2.11533 2.11533C2.03844 2.19222 2 2.29056 2 2.41033V17.5897C2 17.7094 2.03844 17.8078 2.11533 17.8847C2.19222 17.9616 2.29056 18 2.41033 18ZM9.10267 16.3203H18.8973V13.9617H9.10267V16.3203ZM5.02567 11.8203H7.38467V9.46167H5.02567V11.8203ZM10.218 11.8203H12.577V9.46167H10.218V11.8203ZM15.423 11.8203H17.782V9.46167H15.423V11.8203ZM20.6153 11.8203H22.9743V9.46167H20.6153V11.8203ZM5.02567 7.32067H7.38467V4.96167H5.02567V7.32067ZM10.218 7.32067H12.577V4.96167H10.218V7.32067ZM15.423 7.32067H17.782V4.96167H15.423V7.32067ZM20.5513 7.38467H22.9103V5.02567H20.5513V7.38467Z' /%3E%3C/svg%3E%0A");
+}
 header .header_util .search .sch_wrap label {
     display: none;
 }
@@ -225,14 +240,10 @@ header .header_util .search .sch_wrap input[type="text"] {
     color: var(--tit-c);
     border: none;
     outline: none;
-    width: 100%;
+    width: calc(100% - 60px);
     
 }
-header .header_util .search .sch_wrap .sch_gap {
-    display: flex;
-    gap: 0 20px;
-    align-items: center;
-}
+
 header .header_util .search .sch_wrap input[type="submit"] {
     width: 45px;
     height: 45px;
@@ -246,11 +257,31 @@ header .header_util .search .sch_wrap input[type="submit"] {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 19' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.7733 18.3647L10.4315 12.0227C9.9355 12.4069 9.3635 12.7117 8.7155 12.937C8.0675 13.1623 7.37483 13.275 6.6375 13.275C4.78483 13.275 3.21542 12.6319 1.92925 11.3457C0.643083 10.0594 0 8.49 0 6.6375C0 4.785 0.643083 3.21558 1.92925 1.92925C3.21542 0.643083 4.78483 0 6.6375 0C8.49 0 10.0593 0.643083 11.3455 1.92925C12.6318 3.21558 13.275 4.785 13.275 6.6375C13.275 7.37883 13.1623 8.0715 12.937 8.7155C12.7115 9.3595 12.4067 9.9275 12.0227 10.4195L18.3705 16.7733L16.7733 18.3647ZM6.6375 11C7.8515 11 8.88208 10.5764 9.72925 9.72925C10.5764 8.88225 11 7.85167 11 6.6375C11 5.42333 10.5764 4.39275 9.72925 3.54575C8.88208 2.69858 7.8515 2.275 6.6375 2.275C5.42333 2.275 4.39267 2.69858 3.5455 3.54575C2.6985 4.39275 2.275 5.42333 2.275 6.6375C2.275 7.85167 2.6985 8.88225 3.5455 9.72925C4.39267 10.5764 5.42333 11 6.6375 11Z' /%3E%3C/svg%3E%0A");
     position: relative;
     cursor: pointer;
+    
 }
+
 header .header_util .search .sch_wrap .sch_tag {
     white-space: nowrap;
     font-size: 15px;
     color: var(--main1-c);
+}
+
+header .header_main::before {
+    position: absolute;
+    width: 100%;
+    background-color: var(--black30);
+    z-index: -10;
+    content: "";
+    opacity: 0;
+    height: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+    left: 0;
+    top: 719%;
+}
+header.open_pc .header_main::before {
+    height: 500vh;
+    opacity: 1;
 }
 
 header .header_main .gnb{
@@ -283,8 +314,8 @@ header .header_main .gnb_wrap ul.depth1 > li > .depth2_wrap {
     transition: opacity 0.3s;
     height: 0;
     opacity: 0;
+    z-index: 99;
 }
-
 header .header_main .gnb_wrap ul.depth1 > li > .depth2_wrap > .slogan {
     min-width: 23.85%;
     border-right: 1px solid #ededed;
@@ -332,7 +363,7 @@ header .header_main .gnb_wrap ul.depth1 > li > .depth2_wrap > ul.depth2 > li::af
     bottom: 0;
     width: 64vw;
     height: 1px;
-    background-color: #ededed;
+    background-color: #ededed;  
     content: "";
 }
 header .header_main .gnb_wrap ul.depth1 > li > .depth2_wrap > ul.depth2 > li:last-child::after {
@@ -410,7 +441,6 @@ header.open_pc .header_main .gnb_wrap ul.depth1 > li.over > a::after {
 header.open_pc .header_main .gnb_wrap ul.depth1 > li.over > .depth2_wrap {
     height: auto;
     opacity: 1;
-    border-bottom: 1px solid #ededed;
 }
 }
 @media screen and (max-width:1024px){
