@@ -115,6 +115,7 @@ header .header_menu.fixed::after {
     width: 100%;
     background-color: #ededed;
     z-index: 10;
+    pointer-events: none;
 } 
 header .header_menu.fixed ul.depth1 > li > a {
     color: var(--tit-c);
@@ -291,7 +292,8 @@ header .header_menu.open_pc ul.depth1 > li.on > .depth2_wrap {
     overflow: hidden;
     padding: 35px 0 72px 0;
     transition: .5s;
-    
+    box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #ededed;
 }
 header .header_menu.open_pc ul.depth1 > li.on > .depth2_wrap > .wrapper {
     display: flex;

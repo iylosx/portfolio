@@ -19,7 +19,6 @@
     border-radius: 20px 20px  20px 80px;
     overflow: hidden;
     position: relative;
-
 }
 .main_content .popup .swiper .swiper-slide a {
     display: block;
@@ -115,6 +114,7 @@
     height: 36.11%;
     position: relative;
 }
+
 .main_content .mayor .box {
     border-radius: 20px ;
     overflow: hidden;
@@ -125,14 +125,145 @@
     height: 100%;
     aspect-ratio: 788 / 390;
 } 
+.main_content .mayor .box::before {
+    position: absolute;
+    content: "";
+    bottom: -10%;
+    left: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/main/mayor_deco2.png);
+    width: 382px;
+    height: 382px;
+}
+.main_content .mayor .tit strong{
+    font-size: 15px;
+    display: block;
+    margin-bottom: 10px;
+}
+.main_content .mayor .tit h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--tit-c);
+    position: relative;
+}
+.main_content .mayor .tit h2::before {
+    position: absolute;
+    left: 26%;
+    top: 13px;
+    width: 10%;
+    height: 2px;
+    background-color: var(--tit-c);
+    content: "";
+}
+
+.main_content .mayor .tit h2 span.name {
+    font-size: 59px;
+    font-family: var(--nuli);
+    color: var(--main1-c);
+    margin: 6px 5px 0 50px;
+    display: inline-block;
+}
 
 .main_content .mayor .photo {
     position: absolute;
-    right: 0;
-    top: 0;
-
+    right: 10%;
+    bottom: 0;
+    width: 53%;
+    height: 100%;
+    
+}
+.main_content .mayor .photo img {
+    width: 130%;
+    height: 100%;
+    object-position: right top;
+    object-fit: cover;
+    position: relative;
+    z-index: 10;
+}
+.main_content .mayor .photo::after{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 124px;
+    height: 124px;
+    background-image: url(../images/main/mayor_deco.png);
 }
 
+.main_content .mayor .inner2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: 40px 0 0 50px;
+    position: relative;
+    
+}
+
+.main_content .mayor .inner2::before {
+    position: absolute;
+    left: -20%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250%;
+    height: 147px;
+    background-color: var(--white);
+    border-radius: 100px;
+    content: "";
+    z-index: 0;
+}
+.main_content .mayor .inner2 .more a,
+.main_content .mayor .inner2 .forgunsan a{
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid var(--main1-c);
+    color: var(--main1-c);
+    font-family: var(--nuli);
+    font-weight: 500;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 30px;
+    transition: .3s;
+    position: relative;
+    z-index: 10;
+}
+.main_content .mayor .inner2 .more a:hover,
+.main_content .mayor .inner2 .forgunsan a:hover {
+    background-color: var(--main1-c);
+    color: var(--white);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.main_content .mayor .inner2 a::after {
+    position: absolute;
+    content: "";
+    transition: .3s;
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='%230074D8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.12729 6.74707H0V5.24772H9.12729L4.92911 1.04954L5.9974 0L11.9948 5.9974L5.9974 11.9948L4.92911 10.9452L9.12729 6.74707Z' /%3E%3C/svg%3E%0A");
+}
+.main_content .mayor .inner2 a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.12729 6.74707H0V5.24772H9.12729L4.92911 1.04954L5.9974 0L11.9948 5.9974L5.9974 11.9948L4.92911 10.9452L9.12729 6.74707Z' /%3E%3C/svg%3E%0A");
+    right: 20px;
+}
 .main_content .mayor .ico_list {
     position: absolute;
     bottom: -9.2353em;
