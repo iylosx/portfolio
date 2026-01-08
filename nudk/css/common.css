@@ -1,0 +1,131 @@
+/* 모든 페이지에서 적용되는 스타일*/
+:root {
+
+    /*color root*/
+    --main1-c: #CAC4BD;
+    --main2-c: #CBE8E7;
+    --main-gray: #E6E8DE;
+    --txt-c: #555555;
+    --tit-c: #111111;
+    --white: #fff;
+    --white80: rgba( 255, 255, 255, 0.8);
+    --white50: rgba( 255, 255, 255, 0.5);
+    --white30: rgba( 255, 255, 255, 0.3);
+    --white20: rgba( 255, 255, 255, 0.2);
+    --white15: rgba( 255, 255, 255, 0.15);
+    --white10: rgba( 255, 255, 255, 0.1);
+    --black: #000;
+    --black80:rgba(0 , 0 , 0, 0.8);
+    --black70:rgba(0 , 0 , 0, 0.7);
+    --black50:rgba(0 , 0 , 0, 0.5);
+    --black40:rgba(0 , 0 , 0, 0.4);
+    --black30:rgba(0 , 0 , 0, 0.3);
+    --black15:rgba(0 , 0 , 0, 0.15);
+    --black10:rgba(0 , 0 , 0, 0.1);
+    --dark: #4B4844; 
+    --light: #FBF7F2;
+    
+
+    /*font*/
+    --basesize: 16px;
+    --titsize: clamp(28px, 4vw , 40px);
+    --titsize-sub: clamp(17px, 1.6vw, 20px);
+    --btnsize: clamp(11px, 1vw, 13px);
+    --regular: 400;
+    --light-w: 300;
+    --titline: 1.3;
+    --pt : "Pretendard";
+
+    /*display*/
+    --header-h: 60px;
+    --header-var : clamp(50px, 5vw, 60px);
+
+    /*margin*/
+    --ctn-mar: 30px;
+    --wrapper-mar: calc((100vw - var(--wrapper-width)) / 2);
+    --wrapper-width: 1600px;
+}
+@media screen and (max-width:1024px){
+    :root {
+        /*font-size*/
+        --basesize: 16px;
+        --btnsize: 13px;
+        /*display*/
+    }
+}
+@media screen and (max-width:768px){
+    :root {
+        /*font-size*/
+        --basesize: 15px;
+        --btnsize: 12px;
+        /*display*/
+        --ctn-mar: 16px;
+        --wrapper-mar: 16px;
+    }
+    .pc_only {
+    display: none;
+}
+}
+
+html {
+    font-size: 10px;
+}
+body {    
+    font-family: "minion-pro", "Pretendard"; 
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--txt-c);
+    word-break: keep-all;
+    word-wrap: break-word;
+    background-color: var(--light);
+    letter-spacing: -0.03em;
+}
+.ctn_wrapper {
+    width: auto;
+    margin: 0 var(--ctn-mar);
+}
+.wrapper {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+
+
+@media screen and (max-width:1600px){
+    :root {
+        --ctn-mar: 6%;
+        --wrapper-mar: 6%;
+    }
+    .wrapper {
+        width: auto;
+        margin: 0 var(--ctn-mar);
+        
+    }
+    html {
+        font-size:9px;
+    }
+}
+
+
+#wrap {
+    position: relative;
+    overflow: hidden ;
+}
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0); /*도형을 그리는 명령*/
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}    /*html구조상 문자를 써주긴 했는데 글자를 안보이게 하고 싶을 때 blind 클래스로 사라지게 함*/
+
+
+.mo_only {
+   display: none;  /*모바일에서만 보임*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: var(--titline);
+}

@@ -1,0 +1,50 @@
+@import url(common.css);
+@import url(default.css);
+@import url(font.css);
+@import url(layout.css);
+
+.visual {
+    height: 100vh;
+    width: 100%;
+    position:relative;
+    z-index: -1;
+}
+.visual .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30.59%;
+    height: 19.05%;
+    background: url(../images/common/logo_light.svg) no-repeat center center / contain;
+    
+    z-index: 30;
+}
+.visual .video {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.visual .video video {
+    width: 100%;
+    height: 100dvh;
+    object-fit: cover;
+}
+
+.about {
+    padding: 92px 0 149px 0;
+    border-radius: 100px 100px 0px 0px;
+    background-color: var(--light);
+    text-align: center;
+}
+.about .tit h2 {
+    font-size: 32px;
+    color: var(--tit-c);
+}
+
+.about .tit strong {
+    margin: 71px 0 37px 0;
+    display: block;
+    font-size: 32px;
+    color: var(--tit-c);
+}

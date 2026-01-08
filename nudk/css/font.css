@@ -1,0 +1,11 @@
+ @import url("https://use.typekit.net/twx0fgp.css");
+
+@font-face {
+    font-family: "Pretendard";
+    src: url('../font/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+
+/*pretendard*/
