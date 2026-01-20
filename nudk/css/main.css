@@ -33,9 +33,9 @@
 
 .about {
     padding: 92px 0 149px 0;
-    border-radius: 100px 100px 0px 0px;
     background-color: var(--light);
     text-align: center;
+    position: relative;
 }
 .about .tit h2 {
     font-size: 32px;
@@ -47,4 +47,29 @@
     display: block;
     font-size: 32px;
     color: var(--tit-c);
+}
+.about .obj_wrap {
+     /* display: flex;
+     flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    position: relative;
+    padding: 200px 0;
+}
+.about .obj_wrap .obj01 ,
+.about .obj_wrap .obj02 ,
+.about .obj_wrap .obj03 {
+    margin: 0px 0 82px 0;
+    display: block;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.about .obj_wrap .obj_img img {
+    width: 15vw;
+}
+.about .obj_wrap .obj_txt{
+    margin: 82px 0 0 0;
+    display: block;
 }

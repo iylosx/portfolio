@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--js라이브러리 목록 시작-->    
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+<!--js라이브러리 끝-->
 
     <script src="js/main.js"></script>
     <script src="js/common.js"></script>
@@ -39,13 +45,28 @@
                 </video>
             </div>
         </section>
-        <section class="about">
+        <section id="about" class="about">
             <div class="tit">
                 <h2>ABOUT US</h2>
                 <strong>“ 가장 자연스러운 모습으로 ”</strong>
                 <p>누덕은 버려진 조각과 지나간 시간을 다시 이어 그릇으로 남기는 도자 브랜드입니다. <br><br>
                 우리는 늘 완전한 상태로 존재해본 적이 없습니다. <br> 사람과 사람, 기억과 시간, 수많은 흔적이 이어진 채로 지금의 모습이 만들어졌습니다. <br> 우리는 그 이어진 상태야말로 가장 자연스럽고 온전한 모습이라 믿습니다.</p>
             </div>
+            <div class="obj_wrap">
+                <div class="obj01">
+                    <div class="obj_img"><img src="images/common/obj01.png"></div>
+                    <div class="obj_txt"><span>본래에 형태에서</span></div>
+                </div>
+                <div class="obj02">
+                    <div class="obj_img"><img src="images/common/obj02.png"></div>
+                    <div class="obj_txt"><span>깨어지고,</span></div>
+                </div>
+                <div class="obj03">
+                    <div class="obj_img"><img src="images/common/obj3.png"></div>
+                    <div class="obj_txt"><span>다시 이어지는</span></div>
+                </div>
+            </div><!--obj_wrap-->
+            <p>완벽하지 않음은 결핍이 아니라 이어져 온 흔적이라고 믿습니다. <br>누덕은 그 흔적을 숨기지 않고 가장 자연스러운 모습으로 남깁니다.</p>
         </section>
     </main>
     <footer></footer>

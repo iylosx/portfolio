@@ -20,7 +20,7 @@ $(document).ready(function(){
     function scroll_chk(){
             scrolling = $(window).scrollTop()
 
-            if(scrolling > 950){
+            if(scrolling > 400){
                 $('.visual .video').css('position', 'relative')
             }else{
                 $('.visual .video').css('position', 'fixed')
@@ -35,6 +35,52 @@ $(document).ready(function(){
 
     device_chk()
 
+
+    const lenis = new Lenis();
+
+    lenis.on('scroll', (e) => {
+        console.log(e);
+    })
+
+    function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const obj_ani = gsap.timeline();
+   
+    // 처음엔 전부 숨김
+        obj_ani.set([".about .obj01", ".about .obj02", ".about .obj03"], { autoAlpha: 0 });
+
+        // 01
+        obj_ani.to(".about .obj01", { autoAlpha: 1, duration: 1 }, 1);
+        obj_ani.to(".about .obj01", { autoAlpha: 0, duration: 1 }, 2.5);
+
+        // 02
+        obj_ani.to(".about .obj02", { autoAlpha: 1, duration: 1 }, 4);
+        obj_ani.to(".about .obj02", { autoAlpha: 0, duration: 1 }, 5.5);
+
+        // 03
+        obj_ani.to(".about .obj03", { autoAlpha: 1, duration: 1 }, 6);
+
+
+
+    ScrollTrigger.create({
+    animation: obj_ani,
+    trigger: ".about .obj_wrap",
+    start: "center center",
+    end: "+=3000",
+    scrub: true,
+    pin: true,
+    anticipatePin: 1
+});
+
+console.log(document.querySelectorAll(".about .obj01 .obj_img").length);
 
 
 })//end js
