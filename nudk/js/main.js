@@ -30,7 +30,7 @@ $(document).ready(function(){
     scroll_chk()  //문서로딩 후 1번
         $(window).scroll(function(){
             scroll_chk()  // 스크롤할때마다
-            console.log(scrolling)
+            // console.log(scrolling)
         })
 
     device_chk()
@@ -68,6 +68,9 @@ $(document).ready(function(){
         // 03
         obj_ani.to(".about .obj03", { autoAlpha: 1, duration: 1 }, 6);
 
+        //4
+        obj_ani.to(".about .final", { autoAlpha: 1, duration: 1 }, 6.5);
+
 
 
     ScrollTrigger.create({
@@ -80,7 +83,39 @@ $(document).ready(function(){
     anticipatePin: 1
 });
 
-console.log(document.querySelectorAll(".about .obj01 .obj_img").length);
+
+
+
+const boxs = gsap.utils.toArray(".service .arcodian_wrap .box");
+const spacer = 0;
+
+boxs.forEach((card, index) => {
+  ScrollTrigger.create({
+    trigger: card,
+    start: `center-=${index * spacer} center`,
+    endTrigger: ".service .arcodian_wrap",
+    end: "bottom center",
+    pin: true,
+    pinSpacing: false,
+    invalidateOnRefresh: true,
+    // markers: true,
+  });
+
+  const scaleValue = 0.85 + index * 0.05;
+
+  gsap.to(card, {
+    scale: scaleValue,
+    scrollTrigger: {
+      trigger: card,
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+      invalidateOnRefresh: true,
+      // markers: true,
+    }
+  });
+});
+
 
 
 })//end js

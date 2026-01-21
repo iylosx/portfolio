@@ -3,6 +3,22 @@
 @import url(font.css);
 @import url(layout.css);
 
+/* 공동컴포넌트 */
+.more a{
+    display: inline-block;
+    padding:  0.5625em 2.8125em;
+    border: 1px solid var(--light);
+    color: var(--light);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.more a:hover{
+    border: 1px solid var(--tit-c);
+    color: var(--light);
+    background-color: var(--tit-c);
+}
+
+
 .visual {
     height: 100vh;
     width: 100%;
@@ -31,6 +47,52 @@
     object-fit: cover;
 }
 
+.visual .scroll_down {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%);
+    color: var(--light);
+    font-family: var(--pt);
+    font-size: 13px;
+    
+    
+}
+.visual .scroll_down span {
+    position: relative;
+    
+}
+.visual .scroll_down span::before {
+    position: absolute;
+    content: "";
+    width: 0.5vw;
+    height: 1vw;
+    border: 1px solid var(--light);
+    border-radius: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    top: -30px;
+    animation: scroll_ani 3s linear infinite;
+}
+.visual .scroll_down span::after {
+    position: absolute;
+    content: "";
+    width: 0.19vw;
+    height: 0.4vw;
+    background-color: var(--light);
+    border-radius: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    animation: scroll_ani 3s linear infinite;
+}
+
+@keyframes scroll_ani {
+    0% { transform: translateY(0) translateX(-50%);; }
+    50% { transform: translateY(-10px) translateX(-50%);; }
+    100% { transform: translateY(0) translateX(-50%);; }
+}
+
 .about {
     padding: 92px 0 149px 0;
     background-color: var(--light);
@@ -49,10 +111,6 @@
     color: var(--tit-c);
 }
 .about .obj_wrap {
-     /* display: flex;
-     flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     position: relative;
     padding: 200px 0;
 }
@@ -72,4 +130,41 @@
 .about .obj_wrap .obj_txt{
     margin: 82px 0 0 0;
     display: block;
+}
+
+
+.service .arcodian_wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.service .arcodian_wrap .box {
+    width: 100%;
+    border-radius: 100px;
+    background: url(../images/main/service_box01.jpg) no-repeat center center / cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 156px 0 88px 0;
+    color: var(--light);
+    text-align: center;
+    margin-bottom: 200px;
+}
+.service .arcodian_wrap .box.bg02 { background: url(../images/main/service_box02.jpg) no-repeat center center / cover; }
+.service .arcodian_wrap .box.bg03 { background: url(../images/main/service_box03.jpg) no-repeat center center / cover; }
+.service .arcodian_wrap .box.bg04 { background: url(../images/main/service_box04.jpg) no-repeat center center / cover; }
+
+.service .arcodian_wrap .box h3 {
+    margin: 51px 0 18px 0;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.service .arcodian_wrap .box p {
+    margin-bottom: 77px;
 }
