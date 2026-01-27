@@ -3,7 +3,7 @@
 @import url(font.css);
 header {
     width: 100%;
-    position: absolute;
+    position: relative;
     top:0;
     left: 0;
     z-index: 300;
@@ -20,43 +20,24 @@ header .head_line {
     font-size: 13px;
     line-height: 30px;
 }
-
-
-
-
 header .gnb {
+    position: absolute;
+    top: 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+}
+
+header .gnb .menu_open{
+    width: var(--header-h);
     height: var(--header-h);
-    position: fixed;
-    left: 0;
-    top: 0;
-    font-family: var(--pt);
-    color: var(--light);
-    width: 100%;
-    padding-right: var(--ctn-mar);
-    transition:  .2s;
-}
-header.fixed .gnb {
-    background-color: var(--light);
-    color: var(--dark);
-    position: fixed;
-    top: 0;
-    left: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
 }
 
-
-header .gnb .menu_open {
+header .gnb .gnb_wrap {
     display: none;
-}
-header .gnb .gnb_wrap ul {
-    display: flex;
-}
-header .gnb .gnb_wrap ul li a {
-    display: block;
-    padding: 0 18px;
-    line-height: var(--header-h);
 }
 
 header .gnb .util {
@@ -93,4 +74,28 @@ header.fixed .gnb .util .login span::after {
 }
 footer {
     margin-top: 1000px;
+}
+
+aside.top button{
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: var(--ctn-mar);
+    bottom: 3%;
+    z-index: 100;
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside.top button::after {
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 18' fill='%23FBF7F2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 2.24962V0H17.25V2.24962H0ZM1.725 17.5612L0.144375 15.9806L8.625 7.5L17.1056 15.9806L15.525 17.5612L8.625 10.6612L1.725 17.5612Z' /%3E%3C/svg%3E%0A");
+    content: "";
+    position: absolute;
 }
