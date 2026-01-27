@@ -141,11 +141,15 @@ header .home a span::before {
 .overview .left .graphic .photo {
     margin: 50px 0 0 0;
 }
-.overview .right .photo {
-    position: absolute;
-    right: 0;
-    top:0;
+.overview .right {
     width: 50%;
+    position: absolute;
+    right: -5%;
+    top:0;
+}
+.overview .right .photo {
+    
+    width: 100%;
 }
 
 
