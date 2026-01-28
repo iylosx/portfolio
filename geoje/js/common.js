@@ -127,6 +127,12 @@ $(document).ready(function(){
         $(this).removeClass('on')
         }
      })
+     $('header .header_menu ul.depth1 > li > .depth2_wrap > .wrapper > ul.depth2 > li').find('> a').on('focusin', function () {
+        if(device_status == 'pc'){
+            $('ul.depth2 > li').removeClass('on');     // 이전 모든 on 제거
+            $(this).parent().addClass('on'); // 현재만 on
+        }
+    });
      $('header .header_menu .util .search button, header .header_menu .util .popup button').on('focusin', function () {
         if (device_status == 'pc') {
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('on');
