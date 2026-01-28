@@ -645,6 +645,7 @@
 }
 .parking .list ul li span.status.yellow {
     background-color: #EAD247;
+    color: var(--tit-c);
 }
 .parking .list ul li span.status.red {
     background-color: #BF3030;
