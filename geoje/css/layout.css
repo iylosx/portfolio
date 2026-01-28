@@ -321,9 +321,9 @@ header .header_menu.open_pc ul.depth1 > li.on > .depth2_wrap > .wrapper > ul.dep
     border: 1px solid #E5ECFB;
     border-radius: 10px;
     white-space: nowrap;
-    
+    transition:  .2s;
 }
-header .header_menu.open_pc ul.depth1 > li.on > .depth2_wrap > .wrapper > ul.depth2 > li > a:hover {
+header .header_menu.open_pc ul.depth1 > li.on > .depth2_wrap > .wrapper > ul.depth2 > li.on > a {
     font-weight: 600;
     color: var(--tit-c);
 }

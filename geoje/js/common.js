@@ -105,15 +105,25 @@ $(document).ready(function(){
         $(this).addClass('on')
         }
     })
+    $('header .header_menu ul.depth1 > li > .depth2_wrap > .wrapper > ul.depth2 > li').on('mouseenter focusin', function(){
+        if(device_status == 'pc'){
+        $(this).addClass('on')
+        }
+    })
     $('ul.depth1 > li').find('> a').on('focusin', function () {
         if(device_status == 'pc'){
             $('ul.depth1 > li').removeClass('on');     // 이전 모든 on 제거
             $(this).parent().addClass('on'); // 현재만 on
         }
     });
-     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
         if(device_status == 'pc'){
         $('header .header_menu').removeClass('open_pc')
+        $(this).removeClass('on')
+        }
+     })
+     $('header .header_menu ul.depth1 > li > .depth2_wrap > .wrapper > ul.depth2 > li').on('mouseleave', function(){
+        if(device_status == 'pc'){
         $(this).removeClass('on')
         }
      })
