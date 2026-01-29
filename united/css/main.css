@@ -956,11 +956,12 @@
 .ctn_nav .list ul {
     display: flex;
     gap: 0 25px;
+    align-items: center;
 }
-.ctn_nav .list ul li a {
+.ctn_nav .list ul li button {
     transition: color .5s;
 }
-.ctn_nav .list ul li.active a{
+.ctn_nav .list ul li.active button{
     padding: 5px 15px;
     border-radius: 5px;
     background-color: var(--main1-c);
