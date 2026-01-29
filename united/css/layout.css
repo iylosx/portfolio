@@ -30,6 +30,9 @@ header .logo a{
 header .gnb .gnb_open{
     display: none;
 }
+header .gnb .gnb_wrap {
+    overflow-y: auto;
+}
 header .gnb .gnb_wrap .gnb_close {
     display: none;
 }
